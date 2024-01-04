@@ -6,7 +6,7 @@ const Images = async () => {
 
     console.log(response.data);
 
-    return response.data.result.imageUrl;
+    return response.data.result;
   } catch (error) {}
 };
 
