@@ -2,7 +2,7 @@ import axios from "axios";
 
 const AxiosInstance = axios.create({
   baseURL:
-    "http://umc-5th-hackathon-env.eba-qvcasitx.ap-northeast-2.elasticbeanstalk.com",
+    "https://sophie.p-e.kr",
 });
 
 export default AxiosInstance;
