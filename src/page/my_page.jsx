@@ -6,7 +6,7 @@ import UserInfo from '../components/user_info';
 import BloodCardApi from '../page/api/blood_card';
 
 const ParentContainer = styled.div`
-  height: 100vh; // 예시로 높이를 전체 화면 높이로 설정
+  height: 100vh;
   overflow-y: auto;
 `;
 
@@ -16,6 +16,12 @@ const Container = styled.div`
   align-items: center;
   margin: 20px;
 `;
+
+const EmptyContainer = styled.div`
+  height: 150px;
+  margin-top: auto;
+`;
+
 
 const MyPage = () => {
   const [userData, setUserData] = useState({});
@@ -58,6 +64,7 @@ const MyPage = () => {
         />
       ))}
     </Container>
+    <EmptyContainer/> 
     </ParentContainer>
   );
 };

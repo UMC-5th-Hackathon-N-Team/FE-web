@@ -44,10 +44,10 @@ export const NumberBar = styled.div`
 
 export const CertificateTitle = styled.div`
   left: 11px;
-  top: 7px;
+  top: 10px;
   position: absolute;
   color: white;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
 `;
 
@@ -61,6 +61,6 @@ export const CertificateNumber = styled.text`
 export const CardText = styled.text`
   padding: 5px 15px;
   color: black;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: bold;
 `;
