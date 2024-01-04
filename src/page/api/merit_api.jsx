@@ -6,7 +6,7 @@ const MeritApi = async () => {
 
     console.log(response.data);
 
-    return response.data.result;
+    return response.data.result.count; //정확한 숫자를 출력하기
   } catch (error) {
     console.error('Error for mypage:', error);
     throw error;

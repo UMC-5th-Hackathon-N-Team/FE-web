@@ -2,16 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProgressBarContainer = styled.div`
-  width: 90%;
+  width: 50%;
   height: 100%;
-  padding: 17px 10px;
+  padding: 17px 20px;
   border-radius: 10px;
   border: 1px #BFBFBF solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 10px;
+  gap: 15px;
+  margin: 20px;
 `;
 
 const Title = styled.div`
@@ -22,7 +23,7 @@ const Title = styled.div`
 `;
 
 const ProgressContainer = styled.div`
-  width: 314px;
+  width: 100%;
   height: 21px;
   position: relative;
 `;
