@@ -1,48 +1,56 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import History from '../components/history';
 import styled from 'styled-components';
+import BloodCard from '../page/api/blood_card'
+import UserInfo from '../components/user_info';
 
 const Container = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
-const dummyData = [
-  {
-    donation_id: "01-02-374923",
-    date: "2021.12.23",
-    donation_type: "전혈 500ml",
-    donor_center: "부산센터",
-  },
-  {
-    donation_id: "01-02-123456",
-    date: "2021.12.18",
-    donation_type: "전혈 500ml",
-    donor_center: "서울센터",
-  },
-  {
-    donation_id: "01-02-123456",
-    date: "2021.12.18",
-    donation_type: "전혈 500ml",
-    donor_center: "울산센터",
-  },
-];
 
-export default function MyPage() {
+const MyPage = () => {
+  const userData = {
+    name: '홍길동',
+    gender: '남성',
+    birthdate: '1990-01-01',
+    bloodType: 'A형',
+    donationCount: 5,
+  };
+
+  const [userBloodList, setUserBloodList] = useState([]);
+
+  useEffect(() => {
+    const fetchBloodCardData = async () => {
+      try {
+        const bloodCardData = await BloodCard();
+        setUserBloodList(bloodCardData.userBloodList);
+      } catch (error) {
+        console.error('Error for blood_card:', error);
+      }
+    };
+
+    fetchBloodCardData();
+  }, []);
+
   return (
     <div>
+      <UserInfo {...userData} />
       <h3>🏆 헌혈 내역</h3>
       <Container>
-      {dummyData.map((item, index) => (
-        <History
-          key={item.donation_id + index} 
-          date={item.date}
-          donation_id={item.donation_id}
-          donation_type={item.donation_type}
-          donor_center={item.donor_center}
-        />
-      ))}
-    </Container>
+        {userBloodList.map((item, index) => (
+          <History
+            key={index} 
+            date={item.date}
+            donation_id={item.number} 
+            donation_type={item.type} 
+            donor_center={item.location} 
+          />
+        ))}
+      </Container>
     </div>
   );
 }
+
+export default MyPage;
