@@ -11,6 +11,7 @@ export const CertificateContainer = styled.div`
 
 export const CardContainer = styled.div`
   flex: 1;
+  width: 100%;
   background: #E8E8E8;
   border-radius: 0 0 10px 10px;
   border: 1px black solid;
@@ -22,15 +23,16 @@ export const CardContainer = styled.div`
 
 export const TitleBar = styled.div`
   width: 50%;
-  height: 41px;
+  height: 40px;
   position: absolute;
   background: #3452F2;
+  border: 1px #3452F2 solid;
   border-top-left-radius: 10px;
 `;
 
 export const NumberBar = styled.div`
   width: 50%;
-  height: 41px;
+  height: 40px;
   left: 50%;
   background: #E8E8E8;
   position: absolute;

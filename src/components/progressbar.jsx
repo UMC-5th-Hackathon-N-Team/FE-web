@@ -1,8 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const CustomProgressBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 30px 0px 0px 20px;
+  `;
+
+const Image = styled.img`
+  width:20%;
+`;
+
 const ProgressBarContainer = styled.div`
-  width: 50%;
+  width: 60%;
   height: 100%;
   padding: 17px 20px;
   border-radius: 10px;
@@ -46,7 +56,7 @@ const ProgressBarFill = styled.div`
 
 const ProgressText = styled.div`
   height: 100%;
-  padding-left : 10px;
+  padding-left: 10px;
   position: absolute;
   color: white;
   font-size: 11px;
@@ -55,16 +65,19 @@ const ProgressText = styled.div`
   align-items: center;
 `;
 
-const ProgressBar = ({title, progress }) => {
+const ProgressBar = ({ title, progress, imageSrc }) => {
   return (
-    <ProgressBarContainer>
-      <Title>{title}</Title>
-      <ProgressContainer>
-        <ProgressBarBackground />
-        <ProgressBarFill progress={progress} />
-        <ProgressText>{`${progress}%`}</ProgressText>
-      </ProgressContainer>
-    </ProgressBarContainer>
+    <CustomProgressBarContainer>
+      <Image src={imageSrc} alt="Icon" />
+      <ProgressBarContainer>
+        <Title>{title}</Title>
+        <ProgressContainer>
+          <ProgressBarBackground />
+          <ProgressBarFill progress={progress} />
+          <ProgressText>{`${progress}%`}</ProgressText>
+        </ProgressContainer>
+      </ProgressBarContainer>
+    </CustomProgressBarContainer>
   );
 };
 
