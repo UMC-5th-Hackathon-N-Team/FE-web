@@ -3,20 +3,21 @@ import styled from 'styled-components';
 export const CertificateContainer = styled.div`
   width: 90%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
+  margin-bottom: 20px;
 `;
 
 export const CardContainer = styled.div`
-  top: 41px;
-  position: absolute;
-  width: 100%;
-  height: 100px;
+  flex: 1;
   background: #E8E8E8;
-  border-radius:0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
   border: 1px black solid;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: 41px;
 `;
 
 export const TitleBar = styled.div`
@@ -30,11 +31,12 @@ export const TitleBar = styled.div`
 export const NumberBar = styled.div`
   width: 50%;
   height: 41px;
-  left: 193.5px;
+  left: 50%;
   position: absolute;
   display: flex;
   border-top-right-radius: 10px;
   border: 1px #3452F2 solid;
+  align-items: center;
 `;
 
 export const CertificateTitle = styled.div`
@@ -46,7 +48,6 @@ export const CertificateTitle = styled.div`
   font-weight: 600;
 `;
 
-
 export const CertificateNumber = styled.text`
   color: black;
   font-size: 15px;
@@ -54,7 +55,7 @@ export const CertificateNumber = styled.text`
 `;
 
 export const CardText = styled.text`
-  padding : 5px 15px;
+  padding: 5px 15px;
   color: black;
   font-size: 17px;
   font-weight: bold;

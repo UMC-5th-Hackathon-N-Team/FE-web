@@ -54,10 +54,10 @@ const ProgressText = styled.div`
   align-items: center;
 `;
 
-const ProgressBar = ({ title, progress }) => {
+const ProgressBar = ({progress }) => {
   return (
     <ProgressBarContainer>
-      <Title>{title}</Title>
+      <Title>{"🏆 헌혈 유공패 진행도"}</Title>
       <ProgressContainer>
         <ProgressBarBackground />
         <ProgressBarFill progress={progress} />

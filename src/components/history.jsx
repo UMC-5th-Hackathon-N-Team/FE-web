@@ -1,10 +1,7 @@
 import React from 'react';
 import * as S from './history.style';
 
-function History({ date, donation_id, donation_type }) {
-  date = "2021.12.23";
-  donation_id = "01-02-374923 ";
-  donation_type = "전혈 500ml ";
+function History({ date, donation_id, donation_type, donor_center }) {
 
   return (
       <S.CertificateContainer>
@@ -16,6 +13,7 @@ function History({ date, donation_id, donation_type }) {
         <S.CardContainer>
           <S.CardText>{`헌혈 날짜 ${date}`}</S.CardText>
           <S.CardText>{`헌혈 종류 ${donation_type}`}</S.CardText>
+          <S.CardText>{`혈액원명  ${donor_center}`}</S.CardText>
         </S.CardContainer>
       </S.CertificateContainer>
   );
