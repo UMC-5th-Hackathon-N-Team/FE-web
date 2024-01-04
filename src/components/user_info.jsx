@@ -6,7 +6,7 @@ const UserInfoContainer = styled.div`
   height: 100%;
   background: white;
   border-radius: 10px;
-  border: 1px black solid;
+  border: 1px #BFBFBF solid;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -14,29 +14,48 @@ const UserInfoContainer = styled.div`
 `;
 
 const UserImage = styled.img`
-  width: 80px;
-  height: 80px;
+  width: 130px;
+  height: 120px;
   border-radius: 50%;
   margin-right: 20px;
 `;
 
+const GreyBox = styled.div`
+  width: 120%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  border: 0.50px #BFBFBF solid;
+  padding: 4px 0px 4px 5px;
+  margin-bottom:5px
+`;
+
+const RedBox = styled.div`
+  width: 120%;
+  height: 100%;
+  background: white;
+  border-radius: 10px;
+  border: 0.50px #F50000 solid;
+  padding: 4px 0px 4px 5px;
+  margin-bottom:5px
+`;
 const UserInfoItem = styled.div`
-  font-size: 16px;
+  font-size: 13px;
   font-weight: bold;
 `;
 
-const UserInfo = ({ name, gender, birthdate, bloodType, donationCount }) => {
-  const imageUrl = 'url';
+const UserInfo = ({ name, birth, sex, blood, merit, imageUri }) => {
 
   return (
     <UserInfoContainer>
-      <UserImage src={imageUrl} alt="User" />
+      <UserImage src={imageUri} alt="User" />
       <div>
-        <UserInfoItem>{`이름: ${name}`}</UserInfoItem>
-        <UserInfoItem>{`성별: ${gender}`}</UserInfoItem>
-        <UserInfoItem>{`생년월일: ${birthdate}`}</UserInfoItem>
-        <UserInfoItem>{`혈액형: ${bloodType}`}</UserInfoItem>
-        <UserInfoItem>{`현재까지 ${donationCount}번 헌혈했어요!`}</UserInfoItem>
+        <GreyBox><UserInfoItem>{`이름: ${name}`}</UserInfoItem></GreyBox>
+        <GreyBox><UserInfoItem>{`생년월일: ${birth}`}</UserInfoItem></GreyBox>
+        <GreyBox><UserInfoItem>{`성별: ${sex}`}</UserInfoItem></GreyBox>
+        <RedBox><UserInfoItem>{`혈액형: ${blood}`}</UserInfoItem></RedBox>
+        <RedBox><UserInfoItem>{`누적 헌혈횟수: ${merit}`}</UserInfoItem></RedBox>
+      
       </div>
     </UserInfoContainer>
   );
