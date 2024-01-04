@@ -55,6 +55,7 @@ export const CertificateNumber = styled.text`
   color: black;
   font-size: 15px;
   font-weight: 600;
+  margin:10px;
 `;
 
 export const CardText = styled.text`

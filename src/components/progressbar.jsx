@@ -88,8 +88,8 @@ const ProgressBar = ({ title, progress, totalCount, completedCount, imageSrc }) 
         </TitleContainer>
         <ProgressContainer>
           <ProgressBarBackground />
-          <ProgressBarFill progress={Math.min(completedCount / totalCount * 100, 100)}/>
-          <PercentText>{`${Math.min(completedCount / totalCount * 100, 100)}%`}</PercentText>
+          <ProgressBarFill progress={Math.min(Math.floor(completedCount / totalCount * 100))}/>
+          <PercentText>{`${Math.min(Math.floor(completedCount / totalCount * 100))}%`}</PercentText>
         </ProgressContainer>
       </ProgressBarContainer>
     </CustomProgressBarContainer>

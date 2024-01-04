@@ -5,6 +5,11 @@ import MyPageApi from '../page/api/my_page_api';
 import UserInfo from '../components/user_info';
 import BloodCardApi from '../page/api/blood_card';
 
+const ParentContainer = styled.div`
+  height: 100vh; // 예시로 높이를 전체 화면 높이로 설정
+  overflow-y: auto;
+`;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -39,9 +44,10 @@ const MyPage = () => {
   }, []);
 
   return (
+    <ParentContainer>
     <Container>
       <UserInfo {...userData} />
-      <h3 style={{ textAlign: 'left' }}>🏆 헌혈 내역</h3>
+      <h3 style={{ textAlign: 'left', marginLeft: 0 }}>🏆 헌혈 내역</h3>
       {userBloodList.map((item, index) => (
         <History
           key={index} 
@@ -52,6 +58,7 @@ const MyPage = () => {
         />
       ))}
     </Container>
+    </ParentContainer>
   );
 };
 
