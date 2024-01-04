@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import History from '../components/history';
 import styled from 'styled-components';
-import BloodCard from '../page/api/blood_card'
+import BloodCardApi from '../page/api/blood_card'
 import UserInfo from '../components/user_info';
 
 const Container = styled.div`
@@ -25,7 +25,7 @@ const MyPage = () => {
   useEffect(() => {
     const fetchBloodCardData = async () => {
       try {
-        const bloodCardData = await BloodCard();
+        const bloodCardData = await BloodCardApi();
         setUserBloodList(bloodCardData.userBloodList);
       } catch (error) {
         console.error('Error for blood_card:', error);

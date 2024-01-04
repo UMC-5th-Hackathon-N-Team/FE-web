@@ -1,8 +1,8 @@
 import AxiosInstance from "./AxiosInstance";
 
-const BloodCardApi = async () => {
+const MyPageApi = async () => {
   try {
-    const response = await AxiosInstance.get("/bloodcard/1");
+    const response = await AxiosInstance.get("/Mypage");
 
     console.log(response.data);
 
@@ -13,4 +13,4 @@ const BloodCardApi = async () => {
   }
 };
 
-export default BloodCardApi;
+export default MyPageApi;
