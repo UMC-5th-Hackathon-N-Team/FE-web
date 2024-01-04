@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Stickerpage from './page/Stikerpage';
-import MyPage from './page/my_page';
+import Stickerpage from "./page/Stikerpage";
+import MyPage from "./page/my_page";
 import Progression from "./page/progression";
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <Routes>
           <Route path="/stickerpage" element={<Stickerpage />} />
           <Route path="/mypage" element={<MyPage />} />
-          <Route path="/progression" element={<Progression />}/>
+          <Route path="/progression" element={<Progression />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -22,12 +22,12 @@ function Stickerpage() {
       <div
         style={{
           display: "flex",
-          justifyContent: "space-between",
           flexWrap: "wrap",
         }}
       >
-        <Sticker></Sticker> <Sticker></Sticker> <Sticker></Sticker>
-        <Sticker></Sticker>
+        <Sticker /> <Sticker />
+        <Sticker />
+        <Sticker />
       </div>
     </div>
   );
