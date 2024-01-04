@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ProgressBarContainer = styled.div`
-  width: 410px;
+  width: 90%;
   height: 100%;
   padding: 17px 10px;
   border-radius: 10px;
