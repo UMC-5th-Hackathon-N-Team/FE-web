@@ -44,7 +44,7 @@ const UserInfoItem = styled.div`
   font-weight: bold;
 `;
 
-const UserInfo = ({ name, birth, blood, merit, imageUri }) => {
+const UserInfo = ({ name, birth, sex, blood, merit, imageUri }) => {
 
   return (
     <UserInfoContainer>
@@ -52,6 +52,7 @@ const UserInfo = ({ name, birth, blood, merit, imageUri }) => {
       <div>
         <GreyBox><UserInfoItem>{`이름: ${name}`}</UserInfoItem></GreyBox>
         <GreyBox><UserInfoItem>{`생년월일: ${birth}`}</UserInfoItem></GreyBox>
+        <GreyBox><UserInfoItem>{`성별: ${sex}`}</UserInfoItem></GreyBox>
         <RedBox><UserInfoItem>{`혈액형: ${blood}`}</UserInfoItem></RedBox>
         <RedBox><UserInfoItem>{`누적 헌혈횟수: ${merit}`}</UserInfoItem></RedBox>
       

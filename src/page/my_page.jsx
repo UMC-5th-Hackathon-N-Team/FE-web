@@ -23,6 +23,7 @@ const MyPage = () => {
         setUserData({
           name: myPageData.name,
           birth: myPageData.birth,
+          sex: myPageData.sex,
           blood: myPageData.blood,
           merit: myPageData.merit,
           imageUri: myPageData.imageUrl,
