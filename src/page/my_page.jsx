@@ -25,7 +25,7 @@ const MyPage = () => {
           birth: myPageData.birth,
           blood: myPageData.blood,
           merit: myPageData.merit,
-          imageUri: myPageData.imageUri,
+          imageUri: myPageData.imageUrl,
         });
         const bloodCardData = await BloodCardApi();
         setUserBloodList(bloodCardData.userBloodList);

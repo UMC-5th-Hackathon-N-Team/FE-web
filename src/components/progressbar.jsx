@@ -5,10 +5,10 @@ const CustomProgressBarContainer = styled.div`
   display: flex;
   align-items: center;
   margin: 30px 0px 0px 20px;
-  `;
+`;
 
 const Image = styled.img`
-  width:20%;
+  width: 20%;
 `;
 
 const ProgressBarContainer = styled.div`
@@ -25,13 +25,34 @@ const ProgressBarContainer = styled.div`
   margin: 20px;
 `;
 
+const TitleContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
 const Title = styled.div`
   color: black;
   font-size: 16px;
   font-weight: 800;
-  word-wrap: break-word;
 `;
 
+const ProgressText = styled.div`
+color: #777; /* 회색 */
+font-size: 11px;
+font-weight: 600;
+`;
+const PercentText = styled.div`
+  height: 100%;
+  padding-left: 10px;
+  position: absolute;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+`;
 const ProgressContainer = styled.div`
   width: 100%;
   height: 21px;
@@ -54,27 +75,21 @@ const ProgressBarFill = styled.div`
   border-radius: 30px;
 `;
 
-const ProgressText = styled.div`
-  height: 100%;
-  padding-left: 10px;
-  position: absolute;
-  color: white;
-  font-size: 11px;
-  font-weight: 600;
-  display: flex;
-  align-items: center;
-`;
+const ProgressBar = ({ title, progress, totalCount, completedCount, imageSrc }) => {
+  const ratioText = `${completedCount}/${totalCount}`;
 
-const ProgressBar = ({ title, progress, imageSrc }) => {
   return (
     <CustomProgressBarContainer>
       <Image src={imageSrc} alt="Icon" />
       <ProgressBarContainer>
-        <Title>{title}</Title>
+        <TitleContainer>
+          <Title>{title}</Title>
+          <ProgressText>{ratioText}</ProgressText>
+        </TitleContainer>
         <ProgressContainer>
           <ProgressBarBackground />
-          <ProgressBarFill progress={progress} />
-          <ProgressText>{`${progress}%`}</ProgressText>
+          <ProgressBarFill progress={Math.min(completedCount / totalCount * 100, 100)}/>
+          <PercentText>{`${Math.min(completedCount / totalCount * 100, 100)}%`}</PercentText>
         </ProgressContainer>
       </ProgressBarContainer>
     </CustomProgressBarContainer>
