@@ -1,38 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import History from '../components/history';
 import styled from 'styled-components';
-import BloodCardApi from '../page/api/blood_card'
+import MyPageApi from '../page/api/my_page_api';
 import UserInfo from '../components/user_info';
+import BloodCardApi from '../page/api/blood_card';
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px;
-`
+`;
 
 const MyPage = () => {
-  const userData = {
-    name: '소피',
-    gender: '여성',
-    birthdate: '2001.03.13',
-    bloodType: 'O형',
-    donationCount: 7,
-  };
-
+  const [userData, setUserData] = useState({});
   const [userBloodList, setUserBloodList] = useState([]);
 
   useEffect(() => {
-    const fetchBloodCardData = async () => {
+    const fetchData = async () => {
       try {
+        const myPageData = await MyPageApi();
+        setUserData({
+          name: myPageData.name,
+          birth: myPageData.birth,
+          blood: myPageData.blood,
+          merit: myPageData.merit,
+          imageUri: myPageData.imageUri,
+        });
         const bloodCardData = await BloodCardApi();
         setUserBloodList(bloodCardData.userBloodList);
       } catch (error) {
-        console.error('Error for blood_card:', error);
+        console.error('Error fetching data:', error);
       }
     };
 
-    fetchBloodCardData();
+    fetchData();
   }, []);
 
   return (
@@ -50,6 +52,6 @@ const MyPage = () => {
       ))}
     </Container>
   );
-}
+};
 
 export default MyPage;

@@ -25,18 +25,16 @@ const UserInfoItem = styled.div`
   font-weight: bold;
 `;
 
-const UserInfo = ({ name, gender, birthdate, bloodType, donationCount }) => {
-  const imageUrl = 'url';
+const UserInfo = ({ name, birth, blood, merit, imageUri }) => {
 
   return (
     <UserInfoContainer>
-      <UserImage src={imageUrl} alt="User" />
+      <UserImage src={imageUri} alt="User" />
       <div>
         <UserInfoItem>{`이름: ${name}`}</UserInfoItem>
-        <UserInfoItem>{`성별: ${gender}`}</UserInfoItem>
-        <UserInfoItem>{`생년월일: ${birthdate}`}</UserInfoItem>
-        <UserInfoItem>{`혈액형: ${bloodType}`}</UserInfoItem>
-        <UserInfoItem>{`현재까지 ${donationCount}번 헌혈했어요!`}</UserInfoItem>
+        <UserInfoItem>{`생년월일: ${birth}`}</UserInfoItem>
+        <UserInfoItem>{`혈액형: ${blood}`}</UserInfoItem>
+        <UserInfoItem>{`현재까지 ${merit}번 헌혈했어요!`}</UserInfoItem>
       </div>
     </UserInfoContainer>
   );
