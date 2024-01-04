@@ -32,6 +32,7 @@ export const NumberBar = styled.div`
   width: 50%;
   height: 41px;
   left: 50%;
+  background: #E8E8E8;
   position: absolute;
   display: flex;
   border-top-right-radius: 10px;

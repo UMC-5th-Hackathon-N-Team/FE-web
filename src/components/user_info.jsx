@@ -36,7 +36,7 @@ const UserInfo = ({ name, gender, birthdate, bloodType, donationCount }) => {
         <UserInfoItem>{`성별: ${gender}`}</UserInfoItem>
         <UserInfoItem>{`생년월일: ${birthdate}`}</UserInfoItem>
         <UserInfoItem>{`혈액형: ${bloodType}`}</UserInfoItem>
-        <UserInfoItem>{`현재까지 헌혈 횟수: ${donationCount}회`}</UserInfoItem>
+        <UserInfoItem>{`현재까지 ${donationCount}번 헌혈했어요!`}</UserInfoItem>
       </div>
     </UserInfoContainer>
   );
