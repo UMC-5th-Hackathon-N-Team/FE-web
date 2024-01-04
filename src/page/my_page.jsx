@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 20px;
 `
 
 const MyPage = () => {
@@ -15,8 +16,8 @@ const MyPage = () => {
     name: '소피',
     gender: '여성',
     birthdate: '2001.03.13',
-    bloodType: 'A형',
-    donationCount: 5,
+    bloodType: 'O형',
+    donationCount: 7,
   };
 
   const [userBloodList, setUserBloodList] = useState([]);
@@ -35,21 +36,19 @@ const MyPage = () => {
   }, []);
 
   return (
-    <div>
+    <Container>
       <UserInfo {...userData} />
-      <h3>🏆 헌혈 내역</h3>
-      <Container>
-        {userBloodList.map((item, index) => (
-          <History
-            key={index} 
-            date={item.date}
-            donation_id={item.number} 
-            donation_type={item.type} 
-            donor_center={item.location} 
-          />
-        ))}
-      </Container>
-    </div>
+      <h3 style={{ textAlign: 'left' }}>🏆 헌혈 내역</h3>
+      {userBloodList.map((item, index) => (
+        <History
+          key={index} 
+          date={item.date}
+          donation_id={item.number} 
+          donation_type={item.type} 
+          donor_center={item.location} 
+        />
+      ))}
+    </Container>
   );
 }
 
