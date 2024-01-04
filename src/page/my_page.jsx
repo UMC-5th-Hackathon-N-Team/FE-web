@@ -12,9 +12,9 @@ const Container = styled.div`
 
 const MyPage = () => {
   const userData = {
-    name: '홍길동',
-    gender: '남성',
-    birthdate: '1990-01-01',
+    name: '소피',
+    gender: '여성',
+    birthdate: '2001.03.13',
     bloodType: 'A형',
     donationCount: 5,
   };
