@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 const EmptyContainer = styled.div`
-  height: 150px;
+  height: 180px;
   margin-top: auto;
 `;
 
